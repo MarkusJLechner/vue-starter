@@ -7,10 +7,22 @@ import Layouts from 'vite-plugin-vue-layouts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    resolve: {
-        alias: {
-            '~/': `${path.resolve(__dirname, 'src')}/`,
-        },
+  server: {
+    host: '0.0.0.0',
+    // fs: {
+    //   strict: false,
+    // },
+  },
+
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
     },
-    plugins: [vue(), Pages(), Layouts(), ViteComponents()],
+  },
+
+  plugins: [vue(), Pages(), Layouts(), ViteComponents()],
+
+  build: {
+    target: ['chrome87', 'edge88', 'es2020'],
+  },
 })
