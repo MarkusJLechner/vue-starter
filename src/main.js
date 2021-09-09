@@ -10,8 +10,8 @@ import './index.css'
 const routes = setupLayouts(generatedRoutes)
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 })
 
 const app = createApp(App).use(router).use(store).use(createMetaManager())
